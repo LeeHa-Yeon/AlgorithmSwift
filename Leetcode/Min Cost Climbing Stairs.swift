@@ -1,10 +1,14 @@
-var minCostClimbingStairs = function(cost) {
-    let dp = new Array(cost.length);
-    dp[0] = cost[0];    
-    dp[1] = cost[1];    
-    for(let i = 2; i < cost.length; i++){
-        dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
+class Solution {
+    func minCostClimbingStairs(_ cost: [Int]) -> Int {
+        var costCount: Int = cost.count
+        var dp: [Int] = Array(repeating: 0, count: costCount)
+        dp[0] = cost[0]
+        dp[1] = cost[1]
+        
+        for i in 2..<costCount {
+            dp[i] = min(dp[i-1],dp[i-2]) + cost[i]
+        }
+        
+        return min(dp[costCount-1],dp[costCount-2])
     }
-    let sum = Math.min(dp[cost.length - 1], dp[cost.length - 2]);
-    return sum;
-};
+}
