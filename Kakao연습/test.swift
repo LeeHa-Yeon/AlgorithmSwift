@@ -19,3 +19,4 @@ def solution(n, results):
         if len(win[i] | lose[i]) == n - 1:
             answer += 1
     return answer
+
