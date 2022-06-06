@@ -2,7 +2,6 @@ import Foundation
 
 func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
     var board = board
-    var moves = moves
     var stack: [Int] = []
     var answer: Int = 0
     
