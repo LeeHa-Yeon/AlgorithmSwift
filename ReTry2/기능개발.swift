@@ -5,8 +5,7 @@ func solution(_ progresses:[Int], _ speeds:[Int]) -> [Int] {
     var answer: [Int] = []
     
     for idx in 0..<progresses.count {
-        var time = (100 - progresses[idx]) / speeds[idx]
-        time += time * speeds[idx] + progresses[idx] < 100 ? 1 : 0
+        var time = Int(ceil(Double(100 - progresses[idx]) / Double(speeds[idx])))
         timeArr.append(time)
     }
     var standard: Int = timeArr[0]
